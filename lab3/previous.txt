@@ -1,0 +1,15 @@
+include "/etc/bind/rndc.key";
+
+zone "mwale.suai.lab" {
+type master;
+file "/var/lib/bind/db.mwale.suai.lab";
+allow-update { key rndc-key; };
+allow-transfer {localhost; };
+};
+
+zone "15.22.172.in-addr.arpa" {
+type master;
+file "/var/lib/bind/db.15.22.172";
+allow-update { key rndc-key; };
+allow-transfer {localhost; };
+};
